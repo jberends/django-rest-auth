@@ -3,8 +3,9 @@ python:
   - "2.7"
   - "3.5"
 env:
-  - DJANGO=1.8.13
-  - DJANGO=1.9.7
+  - DJANGO=1.8.16
+  - DJANGO=1.9.11
+  - DJANGO=1.10.3
 install:
   - pip install -q Django==$DJANGO --use-mirrors
   - pip install coveralls
@@ -12,7 +13,7 @@ install:
 matrix:
   exclude:
     - python: "3.5"
-      env: DJANGO=1.8.13
+      env: DJANGO=1.8.16
 script:
   - coverage run --source=rest_auth setup.py test
 after_success:
